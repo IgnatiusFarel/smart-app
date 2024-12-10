@@ -21,7 +21,7 @@ import {
 import Image from "next/image";
 import { menuItems } from "./menu-items";
 import Link from "next/link";
-import IconPgn from "@/assets/images/icon_pgn.png";
+import IconPgn from "@/assets/images/PGN_Solution.png";
 import { usePathname } from "next/navigation";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
