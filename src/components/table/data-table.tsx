@@ -27,7 +27,7 @@ import {
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, ChevronsRight, ChevronsLeft} from "lucide-react";
 import { parseAsInteger, useQueryState } from "nuqs";
 import clsx from "clsx";
 interface DataTableProps<TData, TValue> {
@@ -77,7 +77,7 @@ export function DataTable<TData, TValue>({
         ? updaterOrValue(paginationState)
         : updaterOrValue;
 
-    setCurrentPage(pagination.pageIndex + 1); // converting zero-based index to one-based
+    setCurrentPage(pagination.pageIndex + 1); 
     setPageSize(pagination.pageSize);
   };
 
@@ -109,11 +109,11 @@ export function DataTable<TData, TValue>({
                   <TableHead
                     key={header.id}
                     className={clsx(
-                      "py-1 sticky top-0 bg-secondary", // Tambahkan positioning relatif
+                      "py-1 sticky top-0 bg-secondary", 
                       header.column.id === "actions" && [
                         "sticky right-0 top-0 z-[10]",
                         "after:absolute after:left-0 after:top-0 after:bottom-0 after:w-[1px] after:bg-border", // Tambahkan border menggunakan pseudo-element
-                        "border-l border-transparent", // Border transparan untuk menjaga konsistensi layout
+                        "border-l border-transparent", 
                         "bg-secondary",
                       ]
                     )}
@@ -143,7 +143,7 @@ export function DataTable<TData, TValue>({
                         cell.column.id === "actions" && [
                           "sticky right-0 bg-white",
                           "after:absolute after:left-0 after:top-0 after:bottom-0 after:w-[1px] after:bg-border", // Tambahkan border menggunakan pseudo-element
-                          "border-l border-transparent", // Border transparan untuk menjaga konsistensi layout
+                          "border-l border-transparent",
                         ]
                       )}
                     >
@@ -225,11 +225,20 @@ export function DataTable<TData, TValue>({
             )}
           </div>
           <div className="flex items-center space-x-2">
-            <Button
+          <Button
               aria-label="Go to first page"
               variant="outline"
               className="hidden h-8 w-8 p-0 lg:flex"
               onClick={() => table.setPageIndex(0)}
+              disabled={!table.getCanPreviousPage()}
+            >
+              <ChevronsLeft className="h-4 w-4" aria-hidden="true" />
+            </Button>
+            <Button
+              aria-label="Go to previous page"
+              variant="outline"
+              className="h-8 w-8 p-0"
+              onClick={() => table.previousPage()}
               disabled={!table.getCanPreviousPage()}
             >
               <ChevronLeftIcon className="h-4 w-4" aria-hidden="true" />
@@ -242,6 +251,15 @@ export function DataTable<TData, TValue>({
               disabled={!table.getCanNextPage()}
             >
               <ChevronRightIcon className="h-4 w-4" aria-hidden="true" />
+            </Button>
+            <Button
+              aria-label="Go to last page"
+              variant="outline"
+              className="hidden h-8 w-8 p-0 lg:flex"
+              onClick={() => table.setPageIndex(table.getPageCount() - 1)}
+              disabled={!table.getCanNextPage()}
+            >
+              <ChevronsRight className="h-4 w-4" aria-hidden="true" />
             </Button>
           </div>
         </div>
