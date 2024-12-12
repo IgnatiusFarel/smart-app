@@ -5,7 +5,7 @@ export const menuItems = [
     title: "Persediaan",
     icon: <Folder className="w-5 h-5 mr-2" />,
     items: [
-      { title: "Dashboard", url: "/persediaan/overview" },
+      { title: "Dashboard", url: "/persediaan/dashboard" },
       { title: "Penerimaan", url: "/persediaan/penerimaan" },
       { title: "Pengeluaran", url: "/persediaan/pengeluaran" },
       { title: "Pengembalian", url: "/persediaan/pengembalian" },

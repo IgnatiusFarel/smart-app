@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: { template: "%s | SMART", default: "SMART App" },
+  title: { template: "%s | SMART APP", default: "SMART App" },
   description: "SMART APP PGN SOLUTIONS",
 };
 
