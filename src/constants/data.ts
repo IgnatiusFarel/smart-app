@@ -386,83 +386,33 @@ export interface TabelMutasi {
   
   export interface StockOpname {
     no: number;
-    tanggalPenerimaan: string;
-    nomorDanTanggal: string;
+    tanggalStockOpname: string;
     approvalStatus: string;
-    kodeBarang: string;
-    uom: string;
-    jumlah: number;
+    namaBarangMaterial: string;
     kodeProyek: string;
     namaProyek: string;
-    hargaSatuan: number;
-    totalHarga: number;
+    kelompok: string;
+    uom: string;
+    stockHand: number;
+    hasilPerhitunganFisik: number;
+    selisih: number;
+    penjualan: number;
   }
   
   export const dummyStockOpname: StockOpname[] = [
     {
       no: 1,
-      tanggalPenerimaan: '2024-11-20',
-      nomorDanTanggal: 'INV-001 / 2024-11-20',
+      tanggalStockOpname: '2024-11-20',      
       approvalStatus: 'Approved',
-      kodeBarang: 'BRG-001',
-      uom: 'PCS',
-      jumlah: 10,
+      namaBarangMaterial: 'BRG-001',
       kodeProyek: 'PRJ-001',
       namaProyek: 'Proyek A',
-      hargaSatuan: 50000,
-      totalHarga: 500000,
-    },
-    {
-      no: 2,
-      tanggalPenerimaan: '2024-11-21',
-      nomorDanTanggal: 'INV-002 / 2024-11-21',
-      approvalStatus: 'Pending',
-      kodeBarang: 'BRG-002',
-      uom: 'BOX',
-      jumlah: 5,
-      kodeProyek: 'PRJ-002',
-      namaProyek: 'Proyek B',
-      hargaSatuan: 200000,
-      totalHarga: 1000000,
-    },
-    {
-      no: 3,
-      tanggalPenerimaan: '2024-11-22',
-      nomorDanTanggal: 'INV-003 / 2024-11-22',
-      approvalStatus: 'Rejected',
-      kodeBarang: 'BRG-003',
-      uom: 'KG',
-      jumlah: 25,
-      kodeProyek: 'PRJ-003',
-      namaProyek: 'Proyek C',
-      hargaSatuan: 30000,
-      totalHarga: 750000,
-    },
-    {
-      no: 4,
-      tanggalPenerimaan: '2024-11-23',
-      nomorDanTanggal: 'INV-004 / 2024-11-23',
-      approvalStatus: 'Approved',
-      kodeBarang: 'BRG-004',
-      uom: 'LITER',
-      jumlah: 50,
-      kodeProyek: 'PRJ-004',
-      namaProyek: 'Proyek D',
-      hargaSatuan: 10000,
-      totalHarga: 500000,
-    },
-    {
-      no: 5,
-      tanggalPenerimaan: '2024-11-24',
-      nomorDanTanggal: 'INV-005 / 2024-11-24',
-      approvalStatus: 'Pending',
-      kodeBarang: 'BRG-005',
+      kelompok: 'Kelompok A',
       uom: 'PCS',
-      jumlah: 15,
-      kodeProyek: 'PRJ-005',
-      namaProyek: 'Proyek E',
-      hargaSatuan: 75000,
-      totalHarga: 1125000,
+      stockHand: 10,
+      hasilPerhitunganFisik: 50000,
+      selisih: 10,
+      penjualan: 500000,
     },
   ];
   
