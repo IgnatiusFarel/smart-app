@@ -2,9 +2,9 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
-import { Penerimaan } from '@/constants/data';
+import { Pengembalian } from '@/constants/data';
 
-export const columns: ColumnDef<Penerimaan>[] = [
+export const columns: ColumnDef<Pengembalian>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -35,14 +35,14 @@ export const columns: ColumnDef<Penerimaan>[] = [
     cell: ({ row }) => row.original.tanggalPenerimaan,
   },
   {
-    accessorKey: 'nomorDanTanggal',
+    accessorKey: 'nomorTanggalPenerimaan',
     header: 'Nomor dan Tanggal Doc Penerimaan',
-    cell: ({ row }) => row.original.nomorDanTanggal,
+    cell: ({ row }) => row.original.nomorTanggalPenerimaan,
   },
   {
-    accessorKey: 'nomorDanTanggal',
+    accessorKey: 'nomorTanggalPengembalian',
     header: 'Nomor dan Tanggal Doc Pengembalian',
-    cell: ({ row }) => row.original.nomorDanTanggal,
+    cell: ({ row }) => row.original.nomorTanggalPengembalian,
   },
   {
     accessorKey: 'approvalStatus',

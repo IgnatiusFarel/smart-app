@@ -86,7 +86,7 @@ export interface TabelMutasi {
       kodeProyek: 'PRJ-001',
       namaProyek: 'Proyek A',
       hargaSatuan: 50000,
-      totalHarga: 50000000000000000000,
+      totalHarga: 500000,
     },
     {
       no: 2,
@@ -305,7 +305,8 @@ export interface TabelMutasi {
   export interface Pengembalian {
     no: number;
     tanggalPenerimaan: string;
-    nomorDanTanggal: string;
+    nomorTanggalPenerimaan: string;
+    nomorTanggalPengembalian: string;
     approvalStatus: string;
     kodeBarang: string;
     uom: string;
@@ -320,7 +321,8 @@ export interface TabelMutasi {
     {
       no: 1,
       tanggalPenerimaan: '2024-11-20',
-      nomorDanTanggal: 'INV-001 / 2024-11-20',
+      nomorTanggalPenerimaan: 'INV-001 / 2024-11-20',
+      nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
       approvalStatus: 'Approved',
       kodeBarang: 'BRG-001',
       uom: 'PCS',
@@ -333,7 +335,8 @@ export interface TabelMutasi {
     {
       no: 2,
       tanggalPenerimaan: '2024-11-21',
-      nomorDanTanggal: 'INV-002 / 2024-11-21',
+      nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
+      nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
       approvalStatus: 'Pending',
       kodeBarang: 'BRG-002',
       uom: 'BOX',
@@ -346,7 +349,8 @@ export interface TabelMutasi {
     {
       no: 3,
       tanggalPenerimaan: '2024-11-22',
-      nomorDanTanggal: 'INV-003 / 2024-11-22',
+      nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
+      nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
       approvalStatus: 'Rejected',
       kodeBarang: 'BRG-003',
       uom: 'KG',
@@ -359,7 +363,8 @@ export interface TabelMutasi {
     {
       no: 4,
       tanggalPenerimaan: '2024-11-23',
-      nomorDanTanggal: 'INV-004 / 2024-11-23',
+      nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
+      nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
       approvalStatus: 'Approved',
       kodeBarang: 'BRG-004',
       uom: 'LITER',
@@ -372,7 +377,8 @@ export interface TabelMutasi {
     {
       no: 5,
       tanggalPenerimaan: '2024-11-24',
-      nomorDanTanggal: 'INV-005 / 2024-11-24',
+      nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
+      nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
       approvalStatus: 'Pending',
       kodeBarang: 'BRG-005',
       uom: 'PCS',
