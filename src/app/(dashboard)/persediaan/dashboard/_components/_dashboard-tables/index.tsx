@@ -2,13 +2,13 @@
 import { DataTable } from "@/components/table/data-table";
 import { TabelMutasi } from "@/constants/data";
 import { columns } from "./columns";
-import { useState } from "react";
 import { SubHeading } from "@/components/ui/sub-heading";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { DataTableSearch } from "@/components/table/data-table-search";
-import PageContainer from "@/components/layout/page-container";
 import { useQueryState } from "nuqs";
 import { searchParams } from "@/lib/searchparams";
+import { cn } from "@/lib/utils";
+import { Upload } from "lucide-react";
 
 export default function TabelMutasiTable({
   data,
@@ -46,7 +46,11 @@ export default function TabelMutasiTable({
           setSearchQuery={setSearchQuery} 
           setPage={setPage}
         />
-          <Button className="w-[100px]">Export</Button>
+           <Button
+            className={cn(buttonVariants({ variant: "default" }))}
+          >
+            <Upload className="mr-2 h-4 w-4" /> Export
+          </Button>
         </div>
       </div>
 
