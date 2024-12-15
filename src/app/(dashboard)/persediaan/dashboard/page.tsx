@@ -1,4 +1,4 @@
-import DashboardViewPage from "./_components/dashboard";
+import DashboardViewPage from "./_components/dashboard-view";
 
 export const metadata = { 
     title: 'Persediaan - Dashboard'

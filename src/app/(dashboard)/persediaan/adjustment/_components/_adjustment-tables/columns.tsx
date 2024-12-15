@@ -25,8 +25,13 @@ export const columns: ColumnDef<Adjustment>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: 'no',
+    header: 'No',
+    cell: ({ row }) => row.original.no,
+  },
+  {
     accessorKey: 'tanggalAdjustment',
-    header: 'tanggalAdjustment',
+    header: 'Tanggal Adjustment',
     cell: ({ row }) => row.original.tanggalAdjustment,
   },
   {
