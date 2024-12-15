@@ -2,13 +2,23 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { CellAction } from "./cell-action";
 import { Penerimaan } from "@/constants/data";
+import { Button } from "@/components/ui/button";
+import { ArrowUpDown } from "lucide-react";
 
 export const columns: ColumnDef<Penerimaan>[] = [
   {
-    accessorKey: "no",
-    header: "No",
-    enableSorting: false,
-    cell: ({ row }) => <div>{row.getValue("no")}</div>,
+    accessorKey: 'no',
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
+        No
+        <ArrowUpDown />
+      </Button>
+    ),
+    enableSorting: true,
+    cell: ({ row }) => <div>{row.getValue('no')}</div>,
   },
   {
     accessorKey: "tanggalPenerimaan",

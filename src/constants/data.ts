@@ -591,14 +591,13 @@ export interface TabelMutasi {
   
   export interface Peminjaman{
     no: number;
-    tanggalPenerimaan: string;
+    tanggalPeminjaman: string;
     nomorDanTanggal: string;
     approvalStatus: string;
     kodeBarang: string;
+    namaBarang: string;
     uom: string;
     jumlah: number;
-    kodeProyek: string;
-    namaProyek: string;
     hargaSatuan: number;
     totalHarga: number;
   }
@@ -606,66 +605,61 @@ export interface TabelMutasi {
   export const dummyPeminjaman: Peminjaman[] = [
     {
       no: 1,
-      tanggalPenerimaan: '2024-11-20',
+      tanggalPeminjaman: '2024-11-20',
       nomorDanTanggal: 'INV-001 / 2024-11-20',
       approvalStatus: 'Approved',
       kodeBarang: 'BRG-001',
+      namaBarang: 'Gas-LPJ',
       uom: 'PCS',
-      jumlah: 10,
-      kodeProyek: 'PRJ-001',
-      namaProyek: 'Proyek A',
+      jumlah: 10,      
       hargaSatuan: 50000,
       totalHarga: 500000,
     },
     {
       no: 2,
-      tanggalPenerimaan: '2024-11-21',
+      tanggalPeminjaman: '2024-11-21',
       nomorDanTanggal: 'INV-002 / 2024-11-21',
       approvalStatus: 'Pending',
       kodeBarang: 'BRG-002',
+      namaBarang: 'Selang-Karbu',
       uom: 'BOX',
       jumlah: 5,
-      kodeProyek: 'PRJ-002',
-      namaProyek: 'Proyek B',
       hargaSatuan: 200000,
       totalHarga: 1000000,
     },
     {
       no: 3,
-      tanggalPenerimaan: '2024-11-22',
+      tanggalPeminjaman: '2024-11-22',
       nomorDanTanggal: 'INV-003 / 2024-11-22',
       approvalStatus: 'Rejected',
       kodeBarang: 'BRG-003',
+      namaBarang: 'Bom-TNT',
       uom: 'KG',
       jumlah: 25,
-      kodeProyek: 'PRJ-003',
-      namaProyek: 'Proyek C',
       hargaSatuan: 30000,
       totalHarga: 750000,
     },
     {
       no: 4,
-      tanggalPenerimaan: '2024-11-23',
+      tanggalPeminjaman: '2024-11-23',
       nomorDanTanggal: 'INV-004 / 2024-11-23',
       approvalStatus: 'Approved',
       kodeBarang: 'BRG-004',
+      namaBarang: 'Blue-Helmet',
       uom: 'LITER',
       jumlah: 50,
-      kodeProyek: 'PRJ-004',
-      namaProyek: 'Proyek D',
       hargaSatuan: 10000,
       totalHarga: 500000,
     },
     {
       no: 5,
-      tanggalPenerimaan: '2024-11-24',
+      tanggalPeminjaman: '2024-11-24',
       nomorDanTanggal: 'INV-005 / 2024-11-24',
       approvalStatus: 'Pending',
       kodeBarang: 'BRG-005',
+      namaBarang: 'Tangki-Charger',
       uom: 'PCS',
       jumlah: 15,
-      kodeProyek: 'PRJ-005',
-      namaProyek: 'Proyek E',
       hargaSatuan: 75000,
       totalHarga: 1125000,
     },
