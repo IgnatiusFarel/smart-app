@@ -32,12 +32,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader className="h-16 border-b border-sidebar-border flex justify-center items-center">
         <Image
           src={IconPgn}
-          width={200}
+          width={170}
           alt="PGN Solution"
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: "contain"}}
         />
       </SidebarHeader>
-      <SidebarContent className="gap-0 p-0 m-0 pt-2">
+      <SidebarContent className="gap-0 p-0 m-0 pt-2 overflow-x-hidden">
         {menuItems.map((item) => (
           <Collapsible
             key={item.title}
@@ -45,10 +45,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             defaultOpen
             className="group/collapsible gap-0"
           >
-            <SidebarGroup className="py-0">
+            <SidebarGroup className="py-2">
               <SidebarGroupLabel
                 asChild
-                className="group/label text-base text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+                className="group/label text-sm text-[#232323] hover:bg-blue-100 hover:text-[#232323]"
               >
                 <CollapsibleTrigger>
                   {item.icon}
@@ -60,15 +60,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {item.items.map((subItem) => {
-                      const isActive = pathname === subItem.url; // Check active path
+                      const isActive = pathname === subItem.url;
                       return (
                         <SidebarMenuItem key={subItem.title}>
                           <SidebarMenuButton
                             asChild
-                            className={`text-sm ml-2 rounded-md px-2 py-1 ${
+                            className={`text-[13px] ml-6 rounded-md px-2 py-1 ${
                               isActive
-                                ? "bg-gray-200 text-black hover:bg-gray-300" // Active styles
-                                : "text-gray-700 hover:bg-gray-100" // Inactive styles
+                                ? "bg-blue-300 text-[#232323] hover:bg-blue-200"
+                                : "text-[#232323] hover:bg-blue-100"
                             }`}
                           >
                             <Link href={subItem.url}>{subItem.title}</Link>

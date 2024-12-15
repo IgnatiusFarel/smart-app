@@ -21,7 +21,7 @@ export const menuItems = [
     title: "HBB dan Inventaris",
     icon: <ChartBarIncreasing className="w-h h-5 mr-2" />,
     items: [
-      { title: "Dashboard", url: "/hbb-inventaris/overview"},
+      { title: "Dashboard", url: "/hbb-inventaris/dashboard"},
       { title: "Penerimaan", url: "/hbb-inventaris/penerimaan"},
       { title: "Peminjaman", url: "/hbb-inventaris/peminjaman"},
       { title: "Pengembalian", url: "/hbb-inventaris/pengembalian"},

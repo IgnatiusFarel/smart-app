@@ -28,6 +28,7 @@ export const columns: ColumnDef<StockOpname>[] = [
     accessorKey: 'no',
     header: 'No',
     cell: ({ row }) => row.original.no,
+    
   },
   {
     accessorKey: 'tanggalStockOpname',
