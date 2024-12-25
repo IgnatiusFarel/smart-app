@@ -4,7 +4,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
 import { BankData } from '@/constants/data';
 
-export const columns: ColumnDef<BankData>[] = [
+export const columnsFungsi: ColumnDef<BankData>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -44,6 +44,34 @@ export const columns: ColumnDef<BankData>[] = [
     header: 'Created at',
     cell: ({ row }) => row.original.approvalStatus,
   },  
+  {
+    id: 'actions',
+    header: 'Action',
+    cell: ({ row }) => <CellAction data={row.original} />,
+  },
+];
+
+export const columnsProyek: ColumnDef<BankData>[] = [
+  {
+    accessorKey: 'no',
+    header: 'No',
+  },
+  {
+    accessorKey: 'namaFungsi',
+    header: 'Nama Fungsi',
+  },
+  {
+    accessorKey: 'kodeProyek',
+    header: 'Kode dan Nama Proyek',
+  },
+  {
+    accessorKey: 'createdBy',
+    header: 'Created by',
+  },
+  {
+    accessorKey: 'createdAt',
+    header: 'Created at',
+  },
   {
     id: 'actions',
     header: 'Action',
