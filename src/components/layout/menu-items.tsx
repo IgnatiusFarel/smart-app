@@ -36,8 +36,7 @@ export const menuItems = [
     title: "User Management",
     icon: <User className="w-h h-5 mr-2" />,
     items: [
-      { title: "User Management", url: "/hbb-inventaris/overview"},
-      { title: "Role Management", url: "/hbb-inventaris/penerimaan"},
+      { title: "User Management", url: "/user-management/user-management"},      
     ]
   }
 ];
