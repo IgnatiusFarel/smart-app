@@ -66,10 +66,8 @@ export default function PenerimaanTable({
           isFilterActive={isAnyFilterActive}
           onReset={resetFilters}
         />
-      </div>
-      {/* <div className="overflow-x-auto"> */}
+      </div>      
         <DataTable columns={columns} data={searchData} totalItems={totalData} />
-      {/* </div> */}
     </div>
   );
 }

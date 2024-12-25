@@ -21,26 +21,25 @@ export default function PenerimaanViewPage() {
 
   return (
     <PageContainer scrollable>
-    <div className="space-y-4">
-      <div className="flex items-start justify-between">
-        <Heading title="Penerimaan" description="deskripsi penerimaan" />
+      <div className="space-y-4">
+        <div className="flex items-start justify-between">
+          <Heading title="Penerimaan" description="deskripsi penerimaan" />
 
-        <div className="hidden items-center space-x-2 md:flex">
+          <div className="hidden items-center space-x-2 md:flex">
             <CalendarDateRangePicker />
             <Button
-          onClick={handleOpenModal}
-          className={cn(buttonVariants({ variant: "default" }))}
-        >
-          <Plus className="mr-2 h-4 w-4" /> Tambah Transaksi
-        </Button>
+              onClick={handleOpenModal}
+              className={cn(buttonVariants({ variant: "default" }))}
+            >
+              <Plus className="mr-2 h-4 w-4" /> Tambah Transaksi
+            </Button>
           </div>
-     
-      </div>
-      <Separator />
+        </div>
+        <Separator />
 
-      <PenerimaanTable data={penerimaan} totalData={totalPenerimaan} />
-      <TambahTransaksiModal isOpen={isModalOpen} onClose={handleCloseModal} />
-    </div>
+        <PenerimaanTable data={penerimaan} totalData={totalPenerimaan} />
+        <TambahTransaksiModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      </div>
     </PageContainer>
   );
 }
