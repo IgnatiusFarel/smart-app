@@ -9,6 +9,7 @@ import {
     q: parseAsString,    
     page: parseAsInteger.withDefault(1),
     limit: parseAsInteger.withDefault(10),
+    activity: parseAsString,
     role: parseAsString,
     gudang: parseAsString,
     categories: parseAsString,
