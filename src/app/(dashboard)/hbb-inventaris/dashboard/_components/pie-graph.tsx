@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { PieChart, Pie, Label, Tooltip } from "recharts";
+import { PieChart, Pie, Label} from "recharts";
 import {
   Card,
   CardContent,
