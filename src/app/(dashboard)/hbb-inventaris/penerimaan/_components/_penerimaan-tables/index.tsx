@@ -11,7 +11,7 @@ import {
   KLASIFIKASI_OPTIONS,
 } from "./table-filters";
 import { DataTableFilter } from "@/components/table/data-table-filter";
-import { BookType, Combine, Group, Shapes, User2, Warehouse } from "lucide-react";
+import { Combine, Shapes, User2 } from "lucide-react";
 
 export default function PenerimaanTable({
   data,
