@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { QRCode } from "@/constants/data";
-import { CircleAlert, Edit, MoreHorizontal, QrCode, Trash } from "lucide-react";
+import { CircleAlert, Edit, QrCode, Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
