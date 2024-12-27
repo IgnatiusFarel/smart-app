@@ -1,4 +1,4 @@
-import { ChartBarIncreasing, Folder, User } from "lucide-react";
+import { ChartBarIncreasing, Folder, Settings, User } from "lucide-react";
 
 export const menuItems = [
   {
@@ -38,5 +38,12 @@ export const menuItems = [
     items: [
       { title: "User Management", url: "/user-management/user-management"},      
     ]
+  },
+  {
+    title: 'Activity Log',
+    icon: <Settings className="w-5 h-5 mr-2" />,
+    items: [
+      { title: 'Activity Log', url: '/activity-log/activity-log' },
+    ],
   }
 ];
