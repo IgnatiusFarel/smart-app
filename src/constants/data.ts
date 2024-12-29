@@ -110,7 +110,7 @@ export const dummyTabelMutasi: TabelMutasi[] = [
 
   }
 ];
-export interface Penerimaan {
+export interface PersediaanPenerimaan {
   no: number;
   tanggalPenerimaan: string;
   nomorDanTanggal: string;
@@ -124,7 +124,7 @@ export interface Penerimaan {
   totalHarga: number;
 }
 
-export const dummyPenerimaan: Penerimaan[] = [
+export const dummyPersediaanPenerimaan: PersediaanPenerimaan[] = [
   {
     no: 1,
     tanggalPenerimaan: '2024-11-20',
@@ -261,6 +261,177 @@ export const dummyPenerimaan: Penerimaan[] = [
     nomorDanTanggal: 'INV-005 / 2024-11-24',
     approvalStatus: 'Pending',
     kodeBarang: 'BRG-005',
+    uom: 'PCS',
+    jumlah: 15,
+    kodeProyek: 'PRJ-005',
+    namaProyek: 'Proyek E',
+    hargaSatuan: 75000,
+    totalHarga: 1125000,
+  },
+];
+export interface HBBInventarisPenerimaan {
+  no: number;
+  tanggalPenerimaan: string;
+  nomorDanTanggal: string;
+  approvalStatus: string;
+  kodeBarang: string;
+  namaBarang: string;
+  uom: string;
+  jumlah: number;
+  kodeProyek: string;
+  namaProyek: string;
+  hargaSatuan: number;
+  totalHarga: number;
+}
+
+export const dummyHBBInventarisPenerimaan: HBBInventarisPenerimaan[] = [
+  {
+    no: 1,
+    tanggalPenerimaan: '2024-11-20',
+    nomorDanTanggal: 'INV-001 / 2024-11-20',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-001',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 10,
+    kodeProyek: 'PRJ-001',
+    namaProyek: 'Proyek A',
+    hargaSatuan: 50000,
+    totalHarga: 500000,
+  },
+  {
+    no: 2,
+    tanggalPenerimaan: '2024-11-21',
+    nomorDanTanggal: 'INV-002 / 2024-11-21',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-002',
+    namaBarang: 'Barang 1',
+    uom: 'BOX',
+    jumlah: 5,
+    kodeProyek: 'PRJ-002',
+    namaProyek: 'Proyek B',
+    hargaSatuan: 200000,
+    totalHarga: 1000000,
+  },
+  {
+    no: 3,
+    tanggalPenerimaan: '2024-11-22',
+    nomorDanTanggal: 'INV-003 / 2024-11-22',
+    approvalStatus: 'Rejected',
+    kodeBarang: 'BRG-003',
+    namaBarang: 'Barang 1',
+    uom: 'KG',
+    jumlah: 25,
+    kodeProyek: 'PRJ-003',
+    namaProyek: 'Proyek C',
+    hargaSatuan: 30000,
+    totalHarga: 750000,
+  },
+  {
+    no: 4,
+    tanggalPenerimaan: '2024-11-23',
+    nomorDanTanggal: 'INV-004 / 2024-11-23',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-004',
+    namaBarang: 'Barang 1',
+    uom: 'LITER',
+    jumlah: 50,
+    kodeProyek: 'PRJ-004',
+    namaProyek: 'Proyek D',
+    hargaSatuan: 10000,
+    totalHarga: 500000,
+  },
+  {
+    no: 5,
+    tanggalPenerimaan: '2024-11-24',
+    nomorDanTanggal: 'INV-005 / 2024-11-24',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 15,
+    kodeProyek: 'PRJ-005',
+    namaProyek: 'Proyek E',
+    hargaSatuan: 75000,
+    totalHarga: 1125000,
+  },
+  {
+    no: 6,
+    tanggalPenerimaan: '2024-11-20',
+    nomorDanTanggal: 'INV-001 / 2024-11-20',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-001',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 10,
+    kodeProyek: 'PRJ-001',
+    namaProyek: 'Proyek A',
+    hargaSatuan: 50000,
+    totalHarga: 500000,
+  },
+  {
+    no: 7,
+    tanggalPenerimaan: '2024-11-21',
+    nomorDanTanggal: 'INV-002 / 2024-11-21',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-002',
+    namaBarang: 'Barang 1',
+    uom: 'BOX',
+    jumlah: 5,
+    kodeProyek: 'PRJ-002',
+    namaProyek: 'Proyek B',
+    hargaSatuan: 200000,
+    totalHarga: 1000000,
+  },
+  {
+    no: 8,
+    tanggalPenerimaan: '2024-11-22',
+    nomorDanTanggal: 'INV-003 / 2024-11-22',
+    approvalStatus: 'Rejected',
+    kodeBarang: 'BRG-003',
+    namaBarang: 'Barang 1',
+    uom: 'KG',
+    jumlah: 25,
+    kodeProyek: 'PRJ-003',
+    namaProyek: 'Proyek C',
+    hargaSatuan: 30000,
+    totalHarga: 750000,
+  },
+  {
+    no: 9,
+    tanggalPenerimaan: '2024-11-23',
+    nomorDanTanggal: 'INV-004 / 2024-11-23',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-004',
+    namaBarang: 'Barang 1',
+    uom: 'LITER',
+    jumlah: 50,
+    kodeProyek: 'PRJ-004',
+    namaProyek: 'Proyek D',
+    hargaSatuan: 10000,
+    totalHarga: 500000,
+  },
+  {
+    no: 10,
+    tanggalPenerimaan: '2024-11-24',
+    nomorDanTanggal: 'INV-005 / 2024-11-24',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 15,
+    kodeProyek: 'PRJ-005',
+    namaProyek: 'Proyek E',
+    hargaSatuan: 75000,
+    totalHarga: 1125000,
+  },
+  {
+    no: 11,
+    tanggalPenerimaan: '2024-11-24',
+    nomorDanTanggal: 'INV-005 / 2024-11-24',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
     uom: 'PCS',
     jumlah: 15,
     kodeProyek: 'PRJ-005',
@@ -417,7 +588,7 @@ export const dummyPengeluaran: Pengeluaran[] = [
   }
 ];
 
-export interface Pengembalian {
+export interface PersediaanPengembalian {
   no: number;
   tanggalPenerimaan: string;
   nomorTanggalPenerimaan: string;
@@ -432,7 +603,7 @@ export interface Pengembalian {
   totalHarga: number;
 }
 
-export const dummyPengembalian: Pengembalian[] = [
+export const dummyPersediaanPengembalian: PersediaanPengembalian[] = [
   {
     no: 1,
     tanggalPenerimaan: '2024-11-20',
@@ -574,6 +745,152 @@ export const dummyPengembalian: Pengembalian[] = [
     hargaSatuan: 75000,
     totalHarga: 1125000,
   }
+];
+export interface HBBInventarisPengembalian {
+  no: number;
+  tanggalPeminjaman: string;
+  nomorTanggalPeminjaman: string;
+  nomorTanggalPengembalian: string;
+  approvalStatus: string;
+  kodeBarang: string;
+  namaBarang: string;
+  uom: string;
+  jumlah: number;
+  hargaSatuan: number;
+  totalHarga: number;
+}
+
+export const dummyHBBInventarisPengembalian: HBBInventarisPengembalian[] = [
+ {
+    no: 1,
+    tanggalPeminjaman: '2024-11-20',
+    nomorTanggalPeminjaman: 'INV-001 / 2024-11-20',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-001',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 10,
+    hargaSatuan: 50000,
+    totalHarga: 500000,
+  },
+  {
+    no: 2,
+    tanggalPeminjaman: '2024-11-21',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-002',
+    namaBarang: 'Barang 1',
+    uom: 'BOX',
+    jumlah: 5,
+    hargaSatuan: 200000,
+    totalHarga: 1000000,
+  },
+  {
+    no: 3,
+    tanggalPeminjaman: '2024-11-22',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Rejected',
+    kodeBarang: 'BRG-003',
+    namaBarang: 'Barang 1',
+    uom: 'KG',
+    jumlah: 25,
+    hargaSatuan: 30000,
+    totalHarga: 750000,
+  },
+  {
+    no: 4,
+    tanggalPeminjaman: '2024-11-23',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-004',
+    namaBarang: 'Barang 1',
+    uom: 'LITER',
+    jumlah: 50,
+    hargaSatuan: 10000,
+    totalHarga: 500000,
+  },
+  {
+    no: 5,
+    tanggalPeminjaman: '2024-11-24',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 15,
+    hargaSatuan: 75000,
+    totalHarga: 1125000,
+  },
+  {
+    no: 6,
+    tanggalPeminjaman: '2024-11-20',
+    nomorTanggalPeminjaman: 'INV-001 / 2024-11-20',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-001',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 10,
+    hargaSatuan: 50000,
+    totalHarga: 500000,
+  },
+  {
+    no: 7,
+    tanggalPeminjaman: '2024-11-21',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-002',
+    namaBarang: 'Barang 1',
+    uom: 'BOX',
+    jumlah: 5,
+    hargaSatuan: 200000,
+    totalHarga: 1000000,
+  },
+  {
+    no: 8,
+    tanggalPeminjaman: '2024-11-22',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Rejected',
+    kodeBarang: 'BRG-003',
+    namaBarang: 'Barang 1',
+    uom: 'KG',
+    jumlah: 25,
+    hargaSatuan: 30000,
+    totalHarga: 750000,
+ },
+  {
+    no: 9,
+    tanggalPeminjaman: '2024-11-23',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-004',
+    namaBarang: 'Barang 1',
+    uom: 'LITER',
+    jumlah: 50,
+    hargaSatuan: 10000,
+    totalHarga: 500000,
+  },
+  {
+    no: 10,
+    tanggalPeminjaman: '2024-11-24',
+    nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
+    nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 15,
+    hargaSatuan: 75000,
+    totalHarga: 1125000,
+  },
 ];
 
 export interface StockOpname {
@@ -736,7 +1053,7 @@ export const dummyStockOpname: StockOpname[] = [
 
 ];
 
-export interface Penghapusan {
+export interface PersediaanPenghapusan {
   no: number;
   tanggalPenerimaan: string;
   nomorDanTanggal: string;
@@ -750,7 +1067,7 @@ export interface Penghapusan {
   totalHarga: number;
 }
 
-export const dummyPenghapusan: Penghapusan[] = [
+export const dummyPersediaanPenghapusan: PersediaanPenghapusan[] = [
   {
     no: 1,
     tanggalPenerimaan: '2024-11-20',
@@ -880,6 +1197,108 @@ export const dummyPenghapusan: Penghapusan[] = [
     namaProyek: 'Proyek E',
     hargaSatuan: 75000,
     totalHarga: 1125000,
+  }
+];
+export interface HBBInventarisPenghapusan {
+  no: number;
+  nomorDanTanggalPenghapusan: string;
+  approvalStatus: string;
+  kodeBarang: string;
+  namaBarang: string;
+  uom: string;
+  jumlah: number;
+}
+
+export const dummyHBBInventarisPenghapusan: HBBInventarisPenghapusan[] = [
+  {
+    no: 1,
+    nomorDanTanggalPenghapusan: 'INV-001 / 2024-11-20',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-001',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 10,
+  },
+  {
+    no: 2,
+    nomorDanTanggalPenghapusan: 'INV-002 / 2024-11-21',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-002',
+    namaBarang: 'Barang 1',
+    uom: 'BOX',
+    jumlah: 5,
+  },
+  {
+    no: 3,
+    nomorDanTanggalPenghapusan: 'INV-003 / 2024-11-22',
+    approvalStatus: 'Rejected',
+    kodeBarang: 'BRG-003',
+    namaBarang: 'Barang 1',
+    uom: 'KG',
+    jumlah: 25,
+  },
+  {
+    no: 4,
+    nomorDanTanggalPenghapusan: 'INV-004 / 2024-11-23',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-004',
+    namaBarang: 'Barang 1',
+    uom: 'LITER',
+    jumlah: 50,
+  },
+  {
+    no: 5,
+    nomorDanTanggalPenghapusan: 'INV-005 / 2024-11-24',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 15,
+  },
+  {
+    no: 6,
+    nomorDanTanggalPenghapusan: 'INV-001 / 2024-11-20',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-001',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 10,
+  },
+  {
+    no: 7,
+    nomorDanTanggalPenghapusan: 'INV-002 / 2024-11-21',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-002',
+    namaBarang: 'Barang 1',
+    uom: 'BOX',
+    jumlah: 5,
+  },
+  {
+    no: 8,
+    nomorDanTanggalPenghapusan: 'INV-003 / 2024-11-22',
+    approvalStatus: 'Rejected',
+    kodeBarang: 'BRG-003',
+    namaBarang: 'Barang 1',
+    uom: 'KG',
+    jumlah: 25,
+  },
+  {
+    no: 9,
+    nomorDanTanggalPenghapusan: 'INV-004 / 2024-11-23',
+    approvalStatus: 'Approved',
+    kodeBarang: 'BRG-004',
+    namaBarang: 'Barang 1',
+    uom: 'LITER',
+    jumlah: 50,
+  },
+  {
+    no: 10,
+    nomorDanTanggalPenghapusan: 'INV-005 / 2024-11-24',
+    approvalStatus: 'Pending',
+    kodeBarang: 'BRG-005',
+    namaBarang: 'Barang 1',
+    uom: 'PCS',
+    jumlah: 15,
   }
 ];
 
@@ -1239,149 +1658,182 @@ export const dummyPeminjaman: Peminjaman[] = [
 
 export interface Inventaris {
   no: number;
-  tanggalPenerimaan: string;
-  nomorDanTanggal: string;
+  tanggalInventaris: string;
   approvalStatus: string;
+  jenis: string;
+  klasifikasi: string;
   kodeBarang: string;
+  namaBarang: string;
   uom: string;
-  jumlah: number;
-  kodeProyek: string;
-  namaProyek: string;
-  hargaSatuan: number;
-  totalHarga: number;
+  jumlahAsset: number;
+  stockOnHand: string;
+  hasilPerhitunganFisik: string;
+  selisih: number;
+  kondisi: number;
+  penjelasan: number;
 }
 
 export const dummyInventaris: Inventaris[] = [
-  {
+{
     no: 1,
-    tanggalPenerimaan: '2024-11-20',
-    nomorDanTanggal: 'INV-001 / 2024-11-20',
+    tanggalInventaris: '2024-11-20',
     approvalStatus: 'Approved',
+    jenis: 'Jenis A',
+    klasifikasi: 'Klasifikasi A',
     kodeBarang: 'BRG-001',
+    namaBarang: 'Gas-LPJ',
     uom: 'PCS',
-    jumlah: 10,
-    kodeProyek: 'PRJ-001',
-    namaProyek: 'Proyek A',
-    hargaSatuan: 50000,
-    totalHarga: 500000,
+    jumlahAsset: 10,
+    stockOnHand: '10',
+    hasilPerhitunganFisik: '10',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
     no: 2,
-    tanggalPenerimaan: '2024-11-21',
-    nomorDanTanggal: 'INV-002 / 2024-11-21',
+    tanggalInventaris: '2024-11-21',
     approvalStatus: 'Pending',
+    jenis: 'Jenis B',
+    klasifikasi: 'Klasifikasi B',
     kodeBarang: 'BRG-002',
+    namaBarang: 'Selang-Karbu',
     uom: 'BOX',
-    jumlah: 5,
-    kodeProyek: 'PRJ-002',
-    namaProyek: 'Proyek B',
-    hargaSatuan: 200000,
-    totalHarga: 1000000,
+    jumlahAsset: 5,
+    stockOnHand: '5',
+    hasilPerhitunganFisik: '5',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
     no: 3,
-    tanggalPenerimaan: '2024-11-22',
-    nomorDanTanggal: 'INV-003 / 2024-11-22',
+    tanggalInventaris: '2024-11-22',
     approvalStatus: 'Rejected',
+    jenis: 'Jenis C',
+    klasifikasi: 'Klasifikasi C',
     kodeBarang: 'BRG-003',
+    namaBarang: 'Bom-TNT',
     uom: 'KG',
-    jumlah: 25,
-    kodeProyek: 'PRJ-003',
-    namaProyek: 'Proyek C',
-    hargaSatuan: 30000,
-    totalHarga: 750000,
+    jumlahAsset: 25,
+    stockOnHand: '25',
+    hasilPerhitunganFisik: '25',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
     no: 4,
-    tanggalPenerimaan: '2024-11-23',
-    nomorDanTanggal: 'INV-004 / 2024-11-23',
+    tanggalInventaris: '2024-11-23',
     approvalStatus: 'Approved',
+    jenis: 'Jenis D',
+    klasifikasi: 'Klasifikasi D',
     kodeBarang: 'BRG-004',
+    namaBarang: 'Blue-Helmet',
     uom: 'LITER',
-    jumlah: 50,
-    kodeProyek: 'PRJ-004',
-    namaProyek: 'Proyek D',
-    hargaSatuan: 10000,
-    totalHarga: 500000,
-  },
-  {
+    jumlahAsset: 50,
+    stockOnHand: '50',
+    hasilPerhitunganFisik: '50',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
+},
+{
     no: 5,
-    tanggalPenerimaan: '2024-11-24',
-    nomorDanTanggal: 'INV-005 / 2024-11-24',
+    tanggalInventaris: '2024-11-24',
     approvalStatus: 'Pending',
+    jenis: 'Jenis E',
+    klasifikasi: 'Klasifikasi E',
     kodeBarang: 'BRG-005',
+    namaBarang: 'Tangki-Charger',
     uom: 'PCS',
-    jumlah: 15,
-    kodeProyek: 'PRJ-005',
-    namaProyek: 'Proyek E',
-    hargaSatuan: 75000,
-    totalHarga: 1125000,
+    jumlahAsset: 15,
+    stockOnHand: '15',
+    hasilPerhitunganFisik: '15',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
-    no: 1,
-    tanggalPenerimaan: '2024-11-20',
-    nomorDanTanggal: 'INV-001 / 2024-11-20',
+    no: 6,
+    tanggalInventaris: '2024-11-20',
     approvalStatus: 'Approved',
+    jenis: 'Jenis A',
+    klasifikasi: 'Klasifikasi A',
     kodeBarang: 'BRG-001',
+    namaBarang: 'Gas-LPJ',
     uom: 'PCS',
-    jumlah: 10,
-    kodeProyek: 'PRJ-001',
-    namaProyek: 'Proyek A',
-    hargaSatuan: 50000,
-    totalHarga: 500000,
+    jumlahAsset: 10,
+    stockOnHand: '10',
+    hasilPerhitunganFisik: '10',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
-    no: 2,
-    tanggalPenerimaan: '2024-11-21',
-    nomorDanTanggal: 'INV-002 / 2024-11-21',
+    no: 7,
+    tanggalInventaris: '2024-11-21',
     approvalStatus: 'Pending',
+    jenis: 'Jenis B',
+    klasifikasi: 'Klasifikasi B',
     kodeBarang: 'BRG-002',
+    namaBarang: 'Selang-Karbu',
     uom: 'BOX',
-    jumlah: 5,
-    kodeProyek: 'PRJ-002',
-    namaProyek: 'Proyek B',
-    hargaSatuan: 200000,
-    totalHarga: 1000000,
+    jumlahAsset: 5,
+    stockOnHand: '5',
+    hasilPerhitunganFisik: '5',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
-    no: 3,
-    tanggalPenerimaan: '2024-11-22',
-    nomorDanTanggal: 'INV-003 / 2024-11-22',
+    no: 8,
+    tanggalInventaris: '2024-11-22',
     approvalStatus: 'Rejected',
+    jenis: 'Jenis C',
+    klasifikasi: 'Klasifikasi C',
     kodeBarang: 'BRG-003',
+    namaBarang: 'Bom-TNT',
     uom: 'KG',
-    jumlah: 25,
-    kodeProyek: 'PRJ-003',
-    namaProyek: 'Proyek C',
-    hargaSatuan: 30000,
-    totalHarga: 750000,
+    jumlahAsset: 25,
+    stockOnHand: '25',
+    hasilPerhitunganFisik: '25',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
-    no: 4,
-    tanggalPenerimaan: '2024-11-23',
-    nomorDanTanggal: 'INV-004 / 2024-11-23',
+    no: 9,
+    tanggalInventaris: '2024-11-23',
     approvalStatus: 'Approved',
+    jenis: 'Jenis D',
+    klasifikasi: 'Klasifikasi D',
     kodeBarang: 'BRG-004',
+    namaBarang: 'Blue-Helmet',
     uom: 'LITER',
-    jumlah: 50,
-    kodeProyek: 'PRJ-004',
-    namaProyek: 'Proyek D',
-    hargaSatuan: 10000,
-    totalHarga: 500000,
+    jumlahAsset: 50,
+    stockOnHand: '50',
+    hasilPerhitunganFisik: '50',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
   },
   {
-    no: 5,
-    tanggalPenerimaan: '2024-11-24',
-    nomorDanTanggal: 'INV-005 / 2024-11-24',
+    no: 10,
+    tanggalInventaris: '2024-11-24',
     approvalStatus: 'Pending',
+    jenis: 'Jenis E',
+    klasifikasi: 'Klasifikasi E',
     kodeBarang: 'BRG-005',
+    namaBarang: 'Tangki-Charger',
     uom: 'PCS',
-    jumlah: 15,
-    kodeProyek: 'PRJ-005',
-    namaProyek: 'Proyek E',
-    hargaSatuan: 75000,
-    totalHarga: 1125000,
-  },
+    jumlahAsset: 15,
+    stockOnHand: '15',
+    hasilPerhitunganFisik: '15',
+    selisih: 0,
+    kondisi: 1,
+    penjelasan: 1,
+  }
 ];
 
 export interface HBBQRCode {  
