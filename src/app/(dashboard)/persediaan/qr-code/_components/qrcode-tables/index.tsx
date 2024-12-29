@@ -1,10 +1,12 @@
-'use client';
-
-import { DataTable } from '@/components/table/data-table';
-import { QRCode } from '@/constants/data';
-import { columns } from './columns';
-// import { SearchInput } from '@/components/table/data-table-search';
-import { useState } from 'react';
+"use client";
+import { DataTable } from "@/components/table/data-table";
+import { QRCode } from "@/constants/data";
+import { columns } from "./columns";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { Upload } from "lucide-react";
+import { DataTableSearch } from "@/components/table/data-table-search";
+import { useQRCodeTableFilters } from "./table-filters";
 
 export default function QRCodeTable({
   data,
@@ -13,22 +15,37 @@ export default function QRCodeTable({
   data: QRCode[];
   totalData: number;
 }) {
-  const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter data berdasarkan searchQuery
-  const filteredData = data.filter((item) =>
-    item.kodeNamaProyek.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+    const { setPage, searchQuery, setSearchQuery } = useQRCodeTableFilters();
+
+  const searchData = data.filter((item) => {
+    return Object.values(item).some((value) =>
+      String(value).toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
 
   return (
     <div className="space-y-4">
-      {/* Search Input */}
-      {/* <SearchInput onChange={(value) => setSearchQuery(value)} /> */}
+      <div className="flex flex-wrap items-center gap-4">
 
-      {/* Table */}
-      <div className="overflow-x-auto">
-        <DataTable columns={columns} data={filteredData} totalItems={totalData} />
+      <DataTableSearch
+        searchKey="QR Code"
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        setPage={setPage}
+      />
+      <div className="md:ml-auto space-x-2">
+        <Button className={cn(buttonVariants({ variant: "outline" }))}>
+       Print Vertical QR for Selected Data
+        </Button>
+        <Button className={cn(buttonVariants({ variant: "outline" }))}>
+     Print Horizontal QR for Selected Data
+        </Button>
       </div>
+
+      </div>
+    
+      <DataTable columns={columns} data={searchData} totalItems={totalData} />
     </div>
   );
 }
