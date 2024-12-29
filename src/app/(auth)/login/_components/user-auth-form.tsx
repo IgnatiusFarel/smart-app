@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -12,13 +11,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "@/hooks/use-toast";
 import * as z from "zod";
+import Link from "next/link";
 
-// Skema validasi dengan zod
 const formSchema = z.object({
   email: z.string().nonempty("Email is required."),
   password: z.string().min(6, "Password must be at least 6 characters."),
@@ -41,22 +40,26 @@ export default function UserAuthForm() {
     defaultValues,
   });
 
-  const onSubmit = async (data: UserFormValue) => {
-    startTransition(async () => {
-      // setLoading(true);
-      toast({
-        title: "Login Successful",
-        description: "You have successfully logged in!",
-        variant: "default",
-      });
+  // const onSubmit = async (data: UserFormValue) => {
+  //   startTransition(async () => {
+  //     // setLoading(true);
+  //     toast({
+  //       title: "Login Successful",
+  //       description: "You have successfully logged in!",
+  //       variant: "default",
+  //     });
 
-      // Lakukan login menggunakan `signIn` jika diperlukan
-      // signIn("credentials", {
-      //   username: data.username,
-      //   callbackUrl: callbackUrl ?? "/dashboard",
-      // });
-    });
-  };
+  //     // Lakukan login menggunakan `signIn` jika diperlukan
+  //     // signIn("credentials", {
+  //     //   username: data.username,
+  //     //   callbackUrl: callbackUrl ?? "/dashboard",
+  //     // });
+  //   });
+  // };
+
+  const onSubmit = () => {
+    redirect("/persediaan/dashboard");
+  }
 
   return (
     <Form {...form}>
@@ -76,6 +79,7 @@ export default function UserAuthForm() {
                   placeholder="Enter your email..."
                   disabled={loading}
                   {...field}
+                  className="h-14"
                 />
               </FormControl>
               <FormMessage />
@@ -96,6 +100,7 @@ export default function UserAuthForm() {
                     placeholder="Enter your password..."
                     disabled={loading}
                     {...field}
+                    className="h-14"
                   />
                   <button
                     type="button"
@@ -111,7 +116,8 @@ export default function UserAuthForm() {
           )}
         />
 
-        <Button disabled={loading} className="w-full" type="submit">
+        <Button disabled={loading} className="w-full h-10" type="submit">
+          <Link href='/persediaan/dashboard'> Login </Link>
           Login
         </Button>
       </form>

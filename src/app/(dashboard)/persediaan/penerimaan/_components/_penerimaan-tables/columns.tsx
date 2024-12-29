@@ -1,11 +1,11 @@
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { CellAction } from "./cell-action";
-import { Penerimaan } from "@/constants/data";
+import {  PersediaanPenerimaan } from "@/constants/data";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
 
-export const columns: ColumnDef<Penerimaan>[] = [
+export const columns: ColumnDef< PersediaanPenerimaan>[] = [
   {
     accessorKey: 'no',
     header: ({ column }) => (

@@ -40,7 +40,7 @@ export function DataTableSearch({
         placeholder={`Search ${searchKey}...`}
         value={searchQuery ?? ''}
         onChange={(e) => handleSearch(e.target.value)}
-        className={cn("w-full md:max-w-sm h-10 rounded-md pl-10", isLoading && "animate-pulse")}
+        className={cn("w-full md:max-w-sm h-12 rounded-xl pl-10", isLoading && "animate-pulse")}
       />
     </div>
   );

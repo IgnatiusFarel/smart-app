@@ -8,12 +8,12 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { Penerimaan } from '@/constants/data';
+import { PersediaanPenerimaan } from '@/constants/data';
 import { CircleAlert, Edit, Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 interface CellActionProps {
-  data: Penerimaan;
+  data:  PersediaanPenerimaan;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {

@@ -10,12 +10,10 @@ export default function LoginViewPage() {
           <Image src={IconPgn} alt="Logo PGN" width={200} />
         </div>
         <div className="flex w-full flex-col justify-center space-y-6 sm:w-[470px] bg-white px-6 py-8 rounded-xl shadow-lg">
-          <div className="flex flex-col space-y-2 text-center">
-            <h1 className="text-2xl font-semibold tracking-tight">Login</h1>
-            <p className="text-sm text-muted-foreground">
-              Enter your username to sign in your account
-            </p>
-          </div>
+          <h1 className="text-2xl font-medium tracking-tight text-center text-[#232323]">
+            Login to Your Account
+          </h1>
+
           <UserAuthForm />
         </div>
       </div>

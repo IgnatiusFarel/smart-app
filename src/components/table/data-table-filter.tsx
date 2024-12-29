@@ -68,7 +68,7 @@ export function DataTableFilter({
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="border-dashed h-10 rounded-md">
+        <Button variant="outline" className="border-dashed h-12 rounded-xl">
         {icon && React.createElement(icon, { className: "h-4 w-4" })}
           {title}
           {selectedValuesSet.size > 0 && (
