@@ -1,7 +1,7 @@
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { CellAction } from "./cell-action";
-import { Inventaris, Penerimaan } from "@/constants/data";
+import { Inventaris } from "@/constants/data";
 
 export const columns: ColumnDef<Inventaris>[] = [
   {
@@ -10,14 +10,9 @@ export const columns: ColumnDef<Inventaris>[] = [
     cell: ({ row }) => row.original.no,
   },
   {
-    accessorKey: "tanggalPenerimaan",
-    header: "Tanggal Penerimaan",
-    cell: ({ row }) => row.original.tanggalPenerimaan,
-  },
-  {
-    accessorKey: "nomorDanTanggal",
-    header: "Nomor dan Tanggal",
-    cell: ({ row }) => row.original.nomorDanTanggal,
+    accessorKey: "tanggalInventaris",
+    header: "Tanggal Inventaris",
+    cell: ({ row }) => row.original.tanggalInventaris,
   },
   {
     accessorKey: "approvalStatus",
@@ -25,9 +20,24 @@ export const columns: ColumnDef<Inventaris>[] = [
     cell: ({ row }) => row.original.approvalStatus,
   },
   {
+    accessorKey: "jenis",
+    header: "Jenis",
+    cell: ({ row }) => row.original.jenis,
+  },
+  {
+    accessorKey: "klasifikasi",
+    header: "Klasifikasi",
+    cell: ({ row }) => row.original.klasifikasi,
+  },
+  {
     accessorKey: "kodeBarang",
     header: "Kode Barang",
     cell: ({ row }) => row.original.kodeBarang,
+  },
+  {
+    accessorKey: "namaBarang",
+    header: "Nama Barang",
+    cell: ({ row }) => row.original.namaBarang,
   },
   {
     accessorKey: "uom",
@@ -35,34 +45,38 @@ export const columns: ColumnDef<Inventaris>[] = [
     cell: ({ row }) => row.original.uom,
   },
   {
-    accessorKey: "jumlah",
-    header: "Jumlah",
-    cell: ({ row }) => row.original.jumlah,
+    accessorKey: 'jumlahAsset',
+    header: 'Jumlah Asset',
+    cell: ({ row }) => row.original.jumlahAsset,
   },
   {
-    accessorKey: "kodeProyek",
-    header: "Kode Proyek",
-    cell: ({ row }) => row.original.kodeProyek,
+    accessorKey: 'stockOnHand',
+    header: 'Stock On Hand',
+    cell: ({ row }) => row.original.stockOnHand,
   },
   {
-    accessorKey: "namaProyek",
-    header: "Nama Proyek",
-    cell: ({ row }) => row.original.namaProyek,
+    accessorKey: 'hasilPerhitunganFisik',
+    header: 'Hasil Perhitungan Fisik',
+    cell: ({ row }) => row.original.hasilPerhitunganFisik,
   },
   {
-    accessorKey: "hargaSatuan",
-    header: "Harga Satuan",
+    accessorKey: "selisih",
+    header: "Selisih",
     cell: ({ row }) =>
-      row.original.hargaSatuan.toLocaleString("id-ID", {
-        style: "currency",
-        currency: "IDR",
-      }),
+      row.original.selisih
   },
   {
-    accessorKey: "totalHarga",
-    header: "Total Harga",
+    accessorKey: "kondisi",
+    header: "Kondisi",
     cell: ({ row }) =>
-      row.original.totalHarga.toLocaleString("id-ID", {
+      row.original.kondisi
+  },
+
+  {
+    accessorKey: "penjelasan",
+    header: "Penjelasan",
+    cell: ({ row }) =>
+      row.original.penjelasan.toLocaleString("id-ID", {
         style: "currency",
         currency: "IDR",
       }),
