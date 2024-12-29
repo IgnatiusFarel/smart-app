@@ -1,6 +1,6 @@
 'use client';
 import { DataTable } from '@/components/table/data-table';
-import { Penghapusan } from '@/constants/data';
+import { HBBInventarisPenghapusan} from '@/constants/data';
 import { columns } from './columns';
 import { DataTableResetFilter } from '@/components/table/data-table-reset-filter';
 import { DataTableFilter } from '@/components/table/data-table-filter';
@@ -14,7 +14,7 @@ export default function PenghapusanTable({
   data,
   totalData,
 }: {
-  data: Penghapusan[];
+  data: HBBInventarisPenghapusan[];
   totalData: number;
 }) {
   const { 

@@ -7,14 +7,14 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import PenghapusanTable from "./_penghapusan-tables/index";
-import { dummyPenghapusan, Penghapusan } from "@/constants/data";
+import { dummyHBBInventarisPenghapusan, HBBInventarisPenghapusan } from "@/constants/data";
 import { TambahTransaksiModal } from "./_penghapusan-tables/modal-add";
 import { CalendarDateRangePicker } from "@/components/date-range-picker";
 
 export default function PenghapusanViewPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const totalPenghapusan = dummyPenghapusan.length;
-  const penghapusan: Penghapusan[] = dummyPenghapusan;
+  const totalPenghapusan = dummyHBBInventarisPenghapusan.length;
+  const penghapusan: HBBInventarisPenghapusan[] = dummyHBBInventarisPenghapusan;
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
