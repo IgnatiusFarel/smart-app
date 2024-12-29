@@ -22,10 +22,10 @@ export default function PengeluaranViewPage() {
   return (
     <PageContainer scrollable>
       <div className="space-y-4">
-        <div className="flex items-start justify-between">
+        <div className="flex items-center justify-between">
           <Heading title="Pengeluaran" description="deskripsi pengeluaran" />
 
-          <div className="hidden items-center space-x-2 md:flex">
+          <div className="flex flex-col md:flex-col lg:flex-row lg:items-center lg:space-x-2 space-y-2 lg:space-y-0">
           <CalendarDateRangePicker />
           <Button
             onClick={handleOpenModal}
