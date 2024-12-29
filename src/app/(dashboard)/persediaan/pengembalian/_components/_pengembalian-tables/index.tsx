@@ -1,6 +1,6 @@
 "use client";
 import { columns } from "./columns";
-import { Pengembalian } from "@/constants/data";
+import { PersediaanPengembalian } from "@/constants/data";
 import { DataTable } from "@/components/table/data-table";
 import { DataTableSearch } from "@/components/table/data-table-search";
 import { DataTableFilter } from "@/components/table/data-table-filter";
@@ -22,7 +22,7 @@ export default function PengembalianTable({
   data,
   totalData,
 }: {
-  data: Pengembalian[];
+  data: PersediaanPengembalian[];
   totalData: number;
 }) {
   const {
