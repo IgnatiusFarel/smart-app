@@ -1,6 +1,6 @@
 "use client";
 import { DataTable } from "@/components/table/data-table";
-import { Penerimaan } from "@/constants/data";
+import { PersediaanPenerimaan } from "@/constants/data";
 import { columns } from "./columns";
 import { DataTableSearch } from "@/components/table/data-table-search";
 import { DataTableResetFilter } from "@/components/table/data-table-reset-filter";
@@ -16,7 +16,7 @@ export default function PenerimaanTable({
   data,
   totalData,
 }: {
-  data: Penerimaan[];
+  data:PersediaanPenerimaan[];
   totalData: number;
 }) {
   const {
