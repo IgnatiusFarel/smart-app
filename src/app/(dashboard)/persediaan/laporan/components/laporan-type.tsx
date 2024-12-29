@@ -9,66 +9,62 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"; 
+import { SubHeading } from "@/components/ui/sub-heading";
 
 const reports = [
   {
     icon: <Trash name="jenis-laporan" />,
     title: "Jenis Laporan",
-    description: "Jenis Laporan Adalah / Kasih Link aja",
     options: ["Option 1", "Option 2", "Option 3"],
   },
   {
     icon: <Trash name="kelompok" />,
     title: "Kelompok",
-    description: "Kelompok adalah / Kasih link aja",
     options: ["Option A", "Option B", "Option C"],
   },
   {
     icon: <Trash name="nama-kode-barang" />,
-    title: "Nama dan Kode Barang/Material",
-    description: "Nama dan Kode Barang / Material adalah",
+    title: "Nama dan Kode Barang/Material",   
     options: ["Option X", "Option Y", "Option Z"],
   },
   {
     icon: <Trash name="status-barang" />,
     title: "Status Barang/Material",
-    description: "Status Barang / Material adalah",
     options: ["Option Alpha", "Option Beta", "Option Gamma"],
   },
   {
     icon: <Trash name="lokasi-gudang" />,
     title: "Lokasi Gudang",
-    description: "Lokasi Gudang adalah",
     options: ["Option Red", "Option Blue", "Option Green"],
   },
   {
     icon: <Trash name="kelompok" />,
     title: "Kelompok",
-    description: "Kelompok adalah",
     options: ["Option 10%", "Option 20%", "Option 30%"],
   },
   {
     icon: <Trash name="nama-kode-proyek" />,
     title: "Nama dan Kode Proyek",
-    description: "Nama dan Kode Proyek adaalah",
     options: ["Option 10%", "Option 20%", "Option 30%"],
   },
   {
     icon: <Trash name="kategori" />,
-    title: "Kategori",
-    description: "Kategori adalah",
+    title: "Kategori",   
     options: ["Option 10%", "Option 20%", "Option 30%"],
   },
 ];
 
 export default function LaporanType() {
   return (
-    <Card className="mx-auto w-full">
+    <Card className="mx-auto w-full ">
+       <div className="text-center py-4">
+        <SubHeading title="Create a Report" />
+      </div>
       <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-6 rounded-lg">
         {reports.map((report, index) => (
           <div
             key={index}
-            className="flex items-center justify-between p-4 bg-white rounded-md shadow-sm hover:shadow-md transition"
+            className="flex items-center justify-between p-4 bg-white rounded-md shadow-sm hover:shadow-md transition border"
           >
             <div className="flex items-center space-x-4">
               <div className="flex items-center justify-center w-10 h-10 text-primary bg-secondary rounded-full">
@@ -76,9 +72,6 @@ export default function LaporanType() {
               </div>
               <div>
                 <h2 className="text-sm font-medium">{report.title}</h2>
-                <p className="text-xs text-muted-foreground">
-                  {report.description}
-                </p>
               </div>
             </div>
             <Select>
