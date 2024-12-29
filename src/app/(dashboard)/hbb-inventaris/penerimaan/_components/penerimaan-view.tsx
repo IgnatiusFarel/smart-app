@@ -5,7 +5,7 @@ import { Heading } from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
-import { dummyPenerimaan, Penerimaan } from "@/constants/data";
+import { dummyHBBInventarisPenerimaan, HBBInventarisPenerimaan } from "@/constants/data";
 import { TambahTransaksiModal } from "./_penerimaan-tables/modal-add";
 import PenerimaanTable from "./_penerimaan-tables/index";
 import PageContainer from "@/components/layout/page-container";
@@ -13,8 +13,8 @@ import { CalendarDateRangePicker } from "@/components/date-range-picker";
 
 export default function PenerimaanViewPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const totalPenerimaan = dummyPenerimaan.length;
-  const penerimaan: Penerimaan[] = dummyPenerimaan;
+  const totalPenerimaan = dummyHBBInventarisPenerimaan.length;
+  const penerimaan: HBBInventarisPenerimaan[] = dummyHBBInventarisPenerimaan;
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
