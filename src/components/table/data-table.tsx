@@ -100,16 +100,16 @@ export function DataTable<TData, TValue>({
 
   return (
     <div className="space-y-4">
-      <ScrollArea className="grid h-[calc(80vh-220px)] rounded-md border md:h-[calc(90dvh-100px)] overflow-x-auto">
+      <ScrollArea className="grid h-[calc(80vh-220px)] rounded-[10px] border md:h-[calc(90dvh-100px)] overflow-x-auto">
         <Table className="relative min-w-full">
-          <TableHeader className="sticky z-50">
+          <TableHeader className="sticky z-50 ">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <TableHead
                     key={header.id}
                     className={clsx(
-                      "py-1 sticky top-0 bg-secondary", 
+                      "py-1 sticky top-0 bg-secondary text-black font-bold text-center", 
                       header.column.id === "actions" && [
                         "sticky right-0 top-0 z-[10]",
                         "after:absolute after:left-0 after:top-0 after:bottom-0 after:w-[1px] after:bg-border", // Tambahkan border menggunakan pseudo-element
