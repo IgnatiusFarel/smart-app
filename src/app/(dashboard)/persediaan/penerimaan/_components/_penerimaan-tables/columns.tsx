@@ -1,13 +1,14 @@
 "use client";
 import { ColumnDef } from "@tanstack/react-table";
 import { CellAction } from "./cell-action";
-import {  PersediaanPenerimaan } from "@/constants/data";
+import { PersediaanPenerimaan } from "@/constants/data";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
-export const columns: ColumnDef< PersediaanPenerimaan>[] = [
+export const columns: ColumnDef<PersediaanPenerimaan>[] = [
   {
-    accessorKey: 'no',
+    accessorKey: "no",
     header: ({ column }) => (
       <Button
         variant="ghost"
@@ -18,7 +19,7 @@ export const columns: ColumnDef< PersediaanPenerimaan>[] = [
       </Button>
     ),
     enableSorting: true,
-    cell: ({ row }) => <div>{row.getValue('no')}</div>,
+    cell: ({ row }) => <div>{row.getValue("no")}</div>,
   },
   {
     accessorKey: "tanggalPenerimaan",
@@ -33,7 +34,20 @@ export const columns: ColumnDef< PersediaanPenerimaan>[] = [
   {
     accessorKey: "approvalStatus",
     header: "Approval Status",
-    cell: ({ row }) => row.original.approvalStatus,
+    cell: ({ row }) => {
+      const status = row.original.approvalStatus;
+
+      let badgeColor = ""; 
+      if (status === "Rejected") {
+        badgeColor = "bg-[#d3455b]";
+      } else if (status === "Approved") {
+        badgeColor = "bg-[#1aae9f]";
+      } else if (status === "Waiting") {
+        badgeColor = "bg-[#788896]";
+      }
+
+      return <Badge className={badgeColor}>{status}</Badge>;
+    },
   },
   {
     accessorKey: "kodeBarang",
@@ -78,7 +92,7 @@ export const columns: ColumnDef< PersediaanPenerimaan>[] = [
         currency: "IDR",
       }),
     meta: {
-      className: "w-[10px]", 
+      className: "w-[10px]",
     },
   },
   {
