@@ -1,3 +1,5 @@
+import { StringValidation } from "zod";
+
 export interface TabelMutasi {
   periode: string;
   saldoAwal: number;
@@ -142,7 +144,7 @@ export const dummyPersediaanPenerimaan: PersediaanPenerimaan[] = [
     no: 2,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -181,7 +183,7 @@ export const dummyPersediaanPenerimaan: PersediaanPenerimaan[] = [
     no: 5,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -207,7 +209,7 @@ export const dummyPersediaanPenerimaan: PersediaanPenerimaan[] = [
     no: 7,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -246,7 +248,7 @@ export const dummyPersediaanPenerimaan: PersediaanPenerimaan[] = [
     no: 10,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -259,7 +261,7 @@ export const dummyPersediaanPenerimaan: PersediaanPenerimaan[] = [
     no: 11,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -303,7 +305,7 @@ export const dummyHBBInventarisPenerimaan: HBBInventarisPenerimaan[] = [
     no: 2,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Barang 1',
     uom: 'BOX',
@@ -345,7 +347,7 @@ export const dummyHBBInventarisPenerimaan: HBBInventarisPenerimaan[] = [
     no: 5,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -373,7 +375,7 @@ export const dummyHBBInventarisPenerimaan: HBBInventarisPenerimaan[] = [
     no: 7,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Barang 1',
     uom: 'BOX',
@@ -415,7 +417,7 @@ export const dummyHBBInventarisPenerimaan: HBBInventarisPenerimaan[] = [
     no: 10,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -429,7 +431,7 @@ export const dummyHBBInventarisPenerimaan: HBBInventarisPenerimaan[] = [
     no: 11,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -473,7 +475,7 @@ export const dummyPengeluaran: Pengeluaran[] = [
     no: 2,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -512,7 +514,7 @@ export const dummyPengeluaran: Pengeluaran[] = [
     no: 5,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -538,7 +540,7 @@ export const dummyPengeluaran: Pengeluaran[] = [
     no: 7,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -577,7 +579,7 @@ export const dummyPengeluaran: Pengeluaran[] = [
     no: 10,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -623,7 +625,7 @@ export const dummyPersediaanPengembalian: PersediaanPengembalian[] = [
     tanggalPenerimaan: '2024-11-21',
     nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -665,7 +667,7 @@ export const dummyPersediaanPengembalian: PersediaanPengembalian[] = [
     tanggalPenerimaan: '2024-11-24',
     nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -694,7 +696,7 @@ export const dummyPersediaanPengembalian: PersediaanPengembalian[] = [
     tanggalPenerimaan: '2024-11-21',
     nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -736,7 +738,7 @@ export const dummyPersediaanPengembalian: PersediaanPengembalian[] = [
     tanggalPenerimaan: '2024-11-24',
     nomorTanggalPenerimaan: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -779,7 +781,7 @@ export const dummyHBBInventarisPengembalian: HBBInventarisPengembalian[] = [
     tanggalPeminjaman: '2024-11-21',
     nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Barang 1',
     uom: 'BOX',
@@ -818,7 +820,7 @@ export const dummyHBBInventarisPengembalian: HBBInventarisPengembalian[] = [
     tanggalPeminjaman: '2024-11-24',
     nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -844,7 +846,7 @@ export const dummyHBBInventarisPengembalian: HBBInventarisPengembalian[] = [
     tanggalPeminjaman: '2024-11-21',
     nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Barang 1',
     uom: 'BOX',
@@ -883,7 +885,7 @@ export const dummyHBBInventarisPengembalian: HBBInventarisPengembalian[] = [
     tanggalPeminjaman: '2024-11-24',
     nomorTanggalPeminjaman: 'INV-002 / 2024-11-21',
     nomorTanggalPengembalian: 'INV-001 / 2024-11-22',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -926,7 +928,7 @@ export const dummyStockOpname: StockOpname[] = [
   {
     no: 2,
     tanggalStockOpname: '2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     namaBarangMaterial: 'BRG-002',
     kodeProyek: 'PRJ-002',
     namaProyek: 'Proyek B',
@@ -968,7 +970,7 @@ export const dummyStockOpname: StockOpname[] = [
   {
     no: 5,
     tanggalStockOpname: '2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     namaBarangMaterial: 'BRG-005',
     kodeProyek: 'PRJ-005',
     namaProyek: 'Proyek E',
@@ -997,7 +999,7 @@ export const dummyStockOpname: StockOpname[] = [
   {
     no: 7,
     tanggalStockOpname: '2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     namaBarangMaterial: 'BRG-002',
     kodeProyek: 'PRJ-002',
     namaProyek: 'Proyek B',
@@ -1039,7 +1041,7 @@ export const dummyStockOpname: StockOpname[] = [
   {
     no: 10,
     tanggalStockOpname: '2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     namaBarangMaterial: 'BRG-005',
     kodeProyek: 'PRJ-005',
     namaProyek: 'Proyek E',
@@ -1085,7 +1087,7 @@ export const dummyPersediaanPenghapusan: PersediaanPenghapusan[] = [
     no: 2,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -1124,7 +1126,7 @@ export const dummyPersediaanPenghapusan: PersediaanPenghapusan[] = [
     no: 5,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -1150,7 +1152,7 @@ export const dummyPersediaanPenghapusan: PersediaanPenghapusan[] = [
     no: 7,
     tanggalPenerimaan: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -1189,7 +1191,7 @@ export const dummyPersediaanPenghapusan: PersediaanPenghapusan[] = [
     no: 10,
     tanggalPenerimaan: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -1222,7 +1224,7 @@ export const dummyHBBInventarisPenghapusan: HBBInventarisPenghapusan[] = [
   {
     no: 2,
     nomorDanTanggalPenghapusan: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Barang 1',
     uom: 'BOX',
@@ -1249,7 +1251,7 @@ export const dummyHBBInventarisPenghapusan: HBBInventarisPenghapusan[] = [
   {
     no: 5,
     nomorDanTanggalPenghapusan: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -1267,7 +1269,7 @@ export const dummyHBBInventarisPenghapusan: HBBInventarisPenghapusan[] = [
   {
     no: 7,
     nomorDanTanggalPenghapusan: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Barang 1',
     uom: 'BOX',
@@ -1294,7 +1296,7 @@ export const dummyHBBInventarisPenghapusan: HBBInventarisPenghapusan[] = [
   {
     no: 10,
     nomorDanTanggalPenghapusan: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Barang 1',
     uom: 'PCS',
@@ -1336,7 +1338,7 @@ export const dummyAdjustment: Adjustment[] = [
     no: 2,
     tanggalAdjustment: '2024-11-21',
     nomorTanggalDocAdjustment: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -1378,7 +1380,7 @@ export const dummyAdjustment: Adjustment[] = [
     no: 5,
     tanggalAdjustment: '2024-11-24',
     nomorTanggalDocAdjustment: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     uom: 'PCS',
     jumlah: 15,
@@ -1406,7 +1408,7 @@ export const dummyAdjustment: Adjustment[] = [
     no: 7,
     tanggalAdjustment: '2024-11-21',
     nomorTanggalDocAdjustment: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     uom: 'BOX',
     jumlah: 5,
@@ -1445,38 +1447,195 @@ export const dummyAdjustment: Adjustment[] = [
     totalHarga: 500000,
   }
 ];
-export interface BankData {
+export interface PersediaanBankDataFungsi {
   no: number;
-  tanggalAdjustment: string;
-  nomorTanggalDocAdjustment: string;
-  approvalStatus: string;
-  kodeBarang: string;
-  uom: string;
-  jumlah: number;
-  kodeBarangMaterial: string;
-  namaBarangMaterial: string;
-  namaProyek: string;
-  hargaSatuan: number;
-  totalHarga: number;
+  namaFungsi: string;
+  createdBy: string;
+  createdAt: string;
 }
 
-export const dummyBankData: BankData[] = [
-  {
-    no: 1,
-    tanggalAdjustment: '2024-11-20',
-    nomorTanggalDocAdjustment: 'INV-001 / 2024-11-20',
-    approvalStatus: 'Approved',
-    kodeBarang: 'BRG-001',
-    uom: 'PCS',
-    jumlah: 10,
-    kodeBarangMaterial: 'PRJ-001',
-    namaBarangMaterial: 'PRJ-001',
-    namaProyek: 'Proyek A',
-    hargaSatuan: 50000,
-    totalHarga: 500000,
-  },
+export const dummyPersediaanBankDataFungsi: PersediaanBankDataFungsi[] = [
+ {
+  no: 1,
+  namaFungsi: 'Proyek Operasi',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 2,
+  namaFungsi: 'Proyek EPC',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 3,
+  namaFungsi: 'Proyek JARGAS',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 4,
+  namaFungsi: 'Energy Equipment',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
 ];
 
+export interface PersediaanBankDataKelompokBarangMaterial {
+  no: number;
+  fungsi: string; 
+  kelompokBarangMaterial: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataKelompokBarangMaterial : PersediaanBankDataKelompokBarangMaterial[] = [
+  {
+    no: 1,
+    fungsi: 'Proyek Operasi',
+    kelompokBarangMaterial: 'Keproyekan Operasi',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    fungsi: 'Proyek EPC',
+    kelompokBarangMaterial: 'Keproyekan EPC',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    fungsi: 'Proyek JARGAS',
+    kelompokBarangMaterial: 'Keproyekan JARGAS',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 4,
+    fungsi: 'Energy Equipment',
+    kelompokBarangMaterial: 'Energy Equipment',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 5,
+    fungsi: 'Proyek Joglo',
+    kelompokBarangMaterial: 'Material Eks - Proyek',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+]
+
+export interface PersediaanBankDataKodedanNamaProyek {
+  no: number;
+  fungsi: string;
+  kelompokBarangMaterial: string;
+  kodedanNamaProyek: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataKodedanNamaProyek: PersediaanBankDataKodedanNamaProyek[] = [
+  {
+    no: 1,
+    fungsi: 'Proyek Operasi',
+    kelompokBarangMaterial: 'Keproyekan Operasi',
+    kodedanNamaProyek: 'XXXXXX',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    fungsi: 'Proyek EPC',
+    kelompokBarangMaterial: 'Keproyekan EPC',
+    kodedanNamaProyek: 'XXXXXX',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    fungsi: 'Proyek JARGAS',
+    kelompokBarangMaterial: 'Keproyekan JARGAS',
+    kodedanNamaProyek: 'XXXXXX',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 4,
+    fungsi: 'Energy Equipment',
+    kelompokBarangMaterial: 'Energy Equipment',
+    kodedanNamaProyek: 'XXXXXX',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 5,
+    fungsi: 'Proyek Joglo',
+    kelompokBarangMaterial: 'Material Eks - Proyek',
+    kodedanNamaProyek: 'XXXXXX',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+]
+
+export interface PersediaanBankDataUOM {
+  no: number;
+  fungsi: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataUOM: PersediaanBankDataUOM[] = [
+ {
+  no: 1,
+  fungsi: 'Pcs',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 2,
+  fungsi: 'Meter',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 3,
+  fungsi: 'Liter',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 4,
+  fungsi: 'Pack',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 5,
+  fungsi: 'Unit',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 6,
+  fungsi: 'Inch',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 7,
+  fungsi: 'MM',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ },
+ {
+  no: 8,
+  fungsi: 'Set',
+  createdBy: 'Username',
+  createdAt: 'HH:MM - DD/MM/YYYY',
+ }
+];
 export interface QRCode {
   no: number;
   kodeBarangMaterial: string;
@@ -1610,7 +1769,7 @@ export const dummyPeminjaman: Peminjaman[] = [
     no: 2,
     tanggalPeminjaman: '2024-11-21',
     nomorDanTanggal: 'INV-002 / 2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-002',
     namaBarang: 'Selang-Karbu',
     uom: 'BOX',
@@ -1646,7 +1805,7 @@ export const dummyPeminjaman: Peminjaman[] = [
     no: 5,
     tanggalPeminjaman: '2024-11-24',
     nomorDanTanggal: 'INV-005 / 2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     kodeBarang: 'BRG-005',
     namaBarang: 'Tangki-Charger',
     uom: 'PCS',
@@ -1693,7 +1852,7 @@ export const dummyInventaris: Inventaris[] = [
   {
     no: 2,
     tanggalInventaris: '2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     jenis: 'Jenis B',
     klasifikasi: 'Klasifikasi B',
     kodeBarang: 'BRG-002',
@@ -1741,7 +1900,7 @@ export const dummyInventaris: Inventaris[] = [
 {
     no: 5,
     tanggalInventaris: '2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     jenis: 'Jenis E',
     klasifikasi: 'Klasifikasi E',
     kodeBarang: 'BRG-005',
@@ -1773,7 +1932,7 @@ export const dummyInventaris: Inventaris[] = [
   {
     no: 7,
     tanggalInventaris: '2024-11-21',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     jenis: 'Jenis B',
     klasifikasi: 'Klasifikasi B',
     kodeBarang: 'BRG-002',
@@ -1821,7 +1980,7 @@ export const dummyInventaris: Inventaris[] = [
   {
     no: 10,
     tanggalInventaris: '2024-11-24',
-    approvalStatus: 'Pending',
+    approvalStatus: 'Waiting',
     jenis: 'Jenis E',
     klasifikasi: 'Klasifikasi E',
     kodeBarang: 'BRG-005',
