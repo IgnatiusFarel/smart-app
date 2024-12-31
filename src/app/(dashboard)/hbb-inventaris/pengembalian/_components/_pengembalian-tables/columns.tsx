@@ -2,9 +2,9 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
-import { Pengembalian } from '@/constants/data';
+import { HBBInventarisPengembalian } from '@/constants/data';
 
-export const columns: ColumnDef<Pengembalian>[] = [
+export const columns: ColumnDef<HBBInventarisPengembalian>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -30,9 +30,9 @@ export const columns: ColumnDef<Pengembalian>[] = [
     cell: ({ row }) => row.original.no,
   },
   {
-    accessorKey: 'tanggalPenerimaan',
-    header: 'Tanggal Penerimaan',
-    cell: ({ row }) => row.original.tanggalPenerimaan,
+    accessorKey: 'tanggalPeminjaman',
+    header: 'Tanggal Peminjaman',
+    cell: ({ row }) => row.original.tanggalPeminjaman,
   },
   {
     accessorKey: 'nomorTanggalPenerimaan',
