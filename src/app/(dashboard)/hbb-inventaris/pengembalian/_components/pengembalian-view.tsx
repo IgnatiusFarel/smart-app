@@ -7,14 +7,14 @@ import { Separator } from "@/components/ui/separator";
 import PengembalianTable from "./_pengembalian-tables/index";
 import PageContainer from "@/components/layout/page-container";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { dummyPengembalian, Pengembalian } from "@/constants/data";
+import { dummyHBBInventarisPengembalian, HBBInventarisPengembalian } from "@/constants/data";
 import { TambahTransaksiModal } from "./_pengembalian-tables/modal-add";
 import { CalendarDateRangePicker } from "@/components/date-range-picker";
 
 export default function PengembalianViewPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const totalPengembalian = dummyPengembalian.length;
-  const pengembalian: Pengembalian[] = dummyPengembalian;
+  const totalPengembalian = dummyHBBInventarisPengembalian.length;
+  const pengembalian: HBBInventarisPengembalian[] = dummyHBBInventarisPengembalian;
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
