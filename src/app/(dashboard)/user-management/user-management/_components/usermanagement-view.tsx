@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import UserManagementTable from "./_usermanagement-tables/index";
 import { dummyUserManagement, UserManagement } from "@/constants/data";
-// import { TambahDataModal } from "./_usermanagement-tables/modal-add";
+import { AddUserModal } from "./_usermanagement-tables/modal-add";
 import { CalendarDateRangePicker } from "@/components/date-range-picker";
 
 export default function UserManagementViewPage() {
@@ -25,8 +25,8 @@ export default function UserManagementViewPage() {
         <div className="flex items-start justify-between">
           <Heading title="User Management" description="deskripsi user management" />
 
-          <div className="hidden items-center space-x-2 md:flex">
-          <CalendarDateRangePicker />
+          <div className=" items-center space-x-2 md:flex">
+          <CalendarDateRangePicker  />
           <Button
             onClick={handleOpenModal}
             className={cn(buttonVariants({ variant: "default" }))}
@@ -38,7 +38,7 @@ export default function UserManagementViewPage() {
         <Separator />
 
         <UserManagementTable data={userManagement} totalData={totalUserManagement} />
-        {/* <TambahDataModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
+        <AddUserModal isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
     </PageContainer>
   );
