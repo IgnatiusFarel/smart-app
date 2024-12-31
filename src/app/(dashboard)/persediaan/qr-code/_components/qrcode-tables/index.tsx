@@ -2,9 +2,7 @@
 import { DataTable } from "@/components/table/data-table";
 import { QRCode } from "@/constants/data";
 import { columns } from "./columns";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Upload } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { DataTableSearch } from "@/components/table/data-table-search";
 import { useQRCodeTableFilters } from "./table-filters";
 
@@ -35,10 +33,10 @@ export default function QRCodeTable({
         setPage={setPage}
       />
       <div className="md:ml-auto space-x-2">
-        <Button className={cn(buttonVariants({ variant: "outline" }))}>
+        <Button variant="outline" className="border-dashed">
        Print Vertical QR for Selected Data
         </Button>
-        <Button className={cn(buttonVariants({ variant: "outline" }))}>
+        <Button variant="outline" className="border-dashed">
      Print Horizontal QR for Selected Data
         </Button>
       </div>
