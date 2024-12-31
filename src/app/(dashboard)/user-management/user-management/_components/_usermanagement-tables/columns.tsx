@@ -3,6 +3,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
 import { UserManagement } from '@/constants/data';
+import { Badge } from '@/components/ui/badge';
 
 export const columns: ColumnDef<UserManagement>[] = [
   {
@@ -53,8 +54,19 @@ export const columns: ColumnDef<UserManagement>[] = [
   {
     accessorKey: 'statusAkun',
     header: 'Status Akun',
-    cell: ({ row }) => row.original.statusAkun,
+    cell: ({ row }) => {
+      const status = row.original.statusAkun;
+
+      let badgeColor = ""; 
+      if (status === "Inactive") {
+        badgeColor = "bg-[#d3455b]";
+      } else if (status === "Active") {
+        badgeColor = "bg-[#1aae9f]";
+      } 
+      return <Badge className={badgeColor}>{status}</Badge>;
+    },
   },
+  
   {
     id: 'actions',
     header: 'Action',
