@@ -92,7 +92,7 @@ export default function LaporanType() {
           <Button className={cn(buttonVariants({ variant: "default" }))}>
             Generate Filtered Reports
           </Button>
-          <Button variant="outline">Clear Filters</Button>
+          <Button variant="outline" className="border-dashed">Clear Filters</Button>
         </div>
       </CardContent>
     </Card>
