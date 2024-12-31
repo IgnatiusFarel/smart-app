@@ -2,9 +2,10 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { ColumnDef } from '@tanstack/react-table';
 import { CellAction } from './cell-action';
-import { Pengembalian } from '@/constants/data';
+import { PersediaanPengembalian } from '@/constants/data';
+import { Badge } from '@/components/ui/badge';
 
-export const columns: ColumnDef<Pengembalian>[] = [
+export const columns: ColumnDef<PersediaanPengembalian>[] = [
   {
     id: 'select',
     header: ({ table }) => (
@@ -47,7 +48,20 @@ export const columns: ColumnDef<Pengembalian>[] = [
   {
     accessorKey: 'approvalStatus',
     header: 'Approval Status',
-    cell: ({ row }) => row.original.approvalStatus,
+    cell: ({ row }) => {
+      const status = row.original.approvalStatus;
+
+      let badgeColor = ""; 
+      if (status === "Rejected") {
+        badgeColor = "bg-[#d3455b]";
+      } else if (status === "Approved") {
+        badgeColor = "bg-[#1aae9f]";
+      } else if (status === "Waiting") {
+        badgeColor = "bg-[#788896]";
+      }
+
+      return <Badge className={badgeColor}>{status}</Badge>;
+    },
   },
   {
     accessorKey: 'kodeBarang',
