@@ -7,10 +7,27 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import BankDataTable from "./_bankdata-tables/index";
-import { dummyBankData, BankData } from "@/constants/data";
-import { columnsFungsi, columnsProyek } from "./_bankdata-tables/columns"; // Sesuaikan impor
+import { 
+  dummyPersediaanBankDataFungsi, 
+  dummyPersediaanBankDataGudang, 
+  dummyPersediaanBankDataKategoriBarangMaterial, 
+  dummyPersediaanBankDataKelompokBarangMaterial, 
+  dummyPersediaanBankDataKodeAkun, 
+  dummyPersediaanBankDataKodedanNamaProyek, 
+  dummyPersediaanBankDataKondisi, 
+  dummyPersediaanBankDataNamadanKodeBarangMaterial, 
+  dummyPersediaanBankDataNamaEksProyek, 
+  dummyPersediaanBankDataUOM 
+} from "@/constants/data";
+import { columnsFungsi, columnsGudang, columnsKategoriBarangMaterial, columnsKelompokBarangMaterial, columnsKodeAkun, columnsKodedanNamaProyek, columnsKondisi, columnsNamadanKodeBarangMaterial, columnsNamaEksProyek, columnsUOM } from "./_bankdata-tables/columns"; 
 
-const BankDataTypeButton = ({ onClick, isActive, children }) => (
+interface BankDataTypeButtonProps {
+  onClick: () => void;
+  isActive: boolean;
+  children: React.ReactNode;
+}
+
+const BankDataTypeButton: React.FC<BankDataTypeButtonProps> = ({ onClick, isActive, children }) => (
   <Button variant={isActive ? "default" : "outline"} onClick={onClick}>
     {children}
   </Button>
@@ -18,21 +35,52 @@ const BankDataTypeButton = ({ onClick, isActive, children }) => (
 
 export default function BankDataViewPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentView, setCurrentView] = useState("default");
-  const [activeButton, setActiveButton] = useState("default");
-  const totalBankData = dummyBankData.length;
-  const bankData: BankData[] = dummyBankData;
+  const [currentView, setCurrentView] = useState("fungsi");
+  const [activeButton, setActiveButton] = useState("fungsi");
 
-  const columns =
-    currentView === "kelompok"
-      ? columnsFungsi
-      : currentView === "proyek"
-      ? columnsProyek
-      : columnsFungsi;
-  const handleViewChange = (view) => {
-    setActiveButton(view);
-    setCurrentView(view);
-  };
+  const { data, columns } = (() => {
+    switch (currentView) {
+      case "fungsi":
+        return { data: dummyPersediaanBankDataFungsi, columns: columnsFungsi };
+      case "kelompokBarangMaterial":
+        return { data: dummyPersediaanBankDataKelompokBarangMaterial, columns: columnsKelompokBarangMaterial };
+      case "kodedanNamaProyek":
+        return { data: dummyPersediaanBankDataKodedanNamaProyek, columns: columnsKodedanNamaProyek };
+      case "uom":
+        return { data: dummyPersediaanBankDataUOM, columns: columnsUOM };
+      case "kategoriBarangMaterial":
+        return { data: dummyPersediaanBankDataKategoriBarangMaterial, columns: columnsKategoriBarangMaterial };
+      case "namaEksProyek":
+        return { data: dummyPersediaanBankDataNamaEksProyek, columns: columnsNamaEksProyek };
+      case "gudang":
+        return { data: dummyPersediaanBankDataGudang, columns: columnsGudang };
+      case "namadanKodeBarangMaterial":
+        return { data: dummyPersediaanBankDataNamadanKodeBarangMaterial, columns: columnsNamadanKodeBarangMaterial };
+      case "kondisi":
+        return { data: dummyPersediaanBankDataKondisi, columns: columnsKondisi };
+      case "kodeAkun":
+        return { data: dummyPersediaanBankDataKodeAkun, columns: columnsKodeAkun };
+      default:
+        return { data: [], columns: [] };
+    }
+  })();
+
+  type BankDataView = 
+  | "fungsi"
+  | "kelompokBarangMaterial"
+  | "kodedanNamaProyek"
+  | "uom"
+  | "kategoriBarangMaterial"
+  | "namaEksProyek"
+  | "gudang"
+  | "namadanKodeBarangMaterial"
+  | "kondisi"
+  | "kodeAkun";
+
+const handleViewChange = (view: BankDataView) => {
+  setActiveButton(view);
+  setCurrentView(view);
+};
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -51,21 +99,21 @@ export default function BankDataViewPage() {
             </Button>
           </div>
           <div className="grid md:grid-cols-3 grid-cols-2  gap-4">
-            <BankDataTypeButton
-              onClick={() => handleViewChange("default")}
-              isActive={activeButton === "default"}
+          <BankDataTypeButton
+              onClick={() => handleViewChange("fungsi")}
+              isActive={activeButton === "fungsi"}
             >
               Fungsi
             </BankDataTypeButton>
             <BankDataTypeButton
-              onClick={() => handleViewChange("kelompok")}
-              isActive={activeButton === "kelompok"}
+              onClick={() => handleViewChange("kelompokBarangMaterial")}
+              isActive={activeButton === "kelompokBarangMaterial"}
             >
               Kelompok Barang dan/atau Material
             </BankDataTypeButton>
             <BankDataTypeButton
-              onClick={() => handleViewChange("proyek")}
-              isActive={activeButton === "proyek"}
+              onClick={() => handleViewChange("kodedanNamaProyek")}
+              isActive={activeButton === "kodedanNamaProyek"}
             >
               Kode dan Nama Proyek
             </BankDataTypeButton>
@@ -76,14 +124,14 @@ export default function BankDataViewPage() {
               UOM
             </BankDataTypeButton>
             <BankDataTypeButton
-              onClick={() => handleViewChange("kategori")}
-              isActive={activeButton === "kategori"}
+              onClick={() => handleViewChange("kategoriBarangMaterial")}
+              isActive={activeButton === "kategoriBarangMaterial"}
             >
               Kategori Barang dan/atau Material
             </BankDataTypeButton>
             <BankDataTypeButton
-              onClick={() => handleViewChange("eksProyek")}
-              isActive={activeButton === "eksProyek"}
+              onClick={() => handleViewChange("namaEksProyek")}
+              isActive={activeButton === "namaEksProyek"}
             >
               Nama Eks Proyek
             </BankDataTypeButton>
@@ -94,8 +142,8 @@ export default function BankDataViewPage() {
               Gudang
             </BankDataTypeButton>
             <BankDataTypeButton
-              onClick={() => handleViewChange("namaKodeBarang")}
-              isActive={activeButton === "namaKodeBarang"}
+              onClick={() => handleViewChange("namadanKodeBarangMaterial")}
+              isActive={activeButton === "namadanKodeBarangMaterial"}
             >
               Nama dan Kode Barang dan/atau Material
             </BankDataTypeButton>
@@ -117,8 +165,8 @@ export default function BankDataViewPage() {
         <Separator />
 
         <BankDataTable
-          data={bankData}
-          totalData={totalBankData}
+          data={data}
+          totalData={data.length}
           columns={columns}
         />
       </div>
