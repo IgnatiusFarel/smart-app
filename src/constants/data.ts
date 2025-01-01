@@ -1,5 +1,3 @@
-import { StringValidation } from "zod";
-
 export interface TabelMutasi {
   periode: string;
   saldoAwal: number;
@@ -1636,6 +1634,214 @@ export const dummyPersediaanBankDataUOM: PersediaanBankDataUOM[] = [
   createdAt: 'HH:MM - DD/MM/YYYY',
  }
 ];
+
+export interface PersediaanBankDataKategoriBarangMaterial {
+  no: number;
+  kategori: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataKategoriBarangMaterial: PersediaanBankDataKategoriBarangMaterial[] = [
+  {
+    no: 1,
+    kategori: 'Tubular Good',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    kategori: 'Cock and Valve',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 3,
+    kategori: 'Fitting and Flange',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 4,
+    kategori: 'Instrument',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 5,
+    kategori: 'Bahan Kimia',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 6,
+    kategori: 'Lain - Lain',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+];
+
+export interface PersediaanBankDataNamaEksProyek {
+  no: number;
+  namaEksPoryek: string; 
+  createdBy: string; 
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataNamaEksProyek: PersediaanBankDataNamaEksProyek[] = [
+  {
+    no: 1,
+    namaEksPoryek: 'Eks Proyek Rokan',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    namaEksPoryek: 'Eks Proyek Cepu',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 3,
+    namaEksPoryek: 'Eks Proyek Senipah',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+];
+
+export interface PersediaanBankDataGudang {
+  no: number;
+  lokasiGudang: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataGudang: PersediaanBankDataGudang[] = [
+  {
+    no: 1,
+    lokasiGudang: 'Jakarta',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    lokasiGudang: 'Surabaya',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 3,
+    lokasiGudang: 'Brazil',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+];
+export interface PersediaanBankDataNamadanKodeBarangMaterial {
+  no: number;
+  kode: string; 
+  namaBarangMaterial: string; 
+  createdBy: string; 
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataNamadanKodeBarangMaterial: PersediaanBankDataNamadanKodeBarangMaterial[] = [
+  {
+    no: 1, 
+    kode: '11.03.02.00002.30.06.06',
+    namaBarangMaterial: 'Persediaan - Cook and Valve - B - Desc - Merk - Ukuran - UOM',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2, 
+    kode: '11.03.02.00002.30.06.06',
+    namaBarangMaterial: 'Persediaan - Cook and Valve - B - Desc - Merk - Ukuran - UOM',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 3, 
+    kode: '11.03.02.00002.30.06.06',
+    namaBarangMaterial: 'Persediaan - Cook and Valve - B - Desc - Merk - Ukuran - UOM',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+];
+
+export interface PersediaanBankDataKondisi { 
+  no: number;
+  kondisi: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataKondisi: PersediaanBankDataKondisi[] = [
+  {
+    no: 1,
+    kondisi: 'Baik',
+    createdBy: 'Username',
+    createdAt: 'MM:HH - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    kondisi: 'Tidak Baik',
+    createdBy: 'Username',
+    createdAt: 'MM:HH - DD/MM/YYYY'
+  },
+  {
+    no: 3,
+    kondisi: 'Rusak',
+    createdBy: 'Username',
+    createdAt: 'MM:HH - DD/MM/YYYY'
+  },
+  {
+    no: 4,
+    kondisi: 'Hilang',
+    createdBy: 'Username',
+    createdAt: 'MM:HH - DD/MM/YYYY'
+  },
+]
+
+export interface PersediaanBankDataKodeAkun { 
+  no: number;
+  kode: string;
+  nama: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export const dummyPersediaanBankDataKodeAkun: PersediaanBankDataKodeAkun[] = [
+  {
+    no: 1,
+    kode: 'XX.XX.XX',
+    nama: 'Kas',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 2,
+    kode: 'XX.XX.XX',
+    nama: 'Utang',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 3,
+    kode: 'XX.XX.XX',
+    nama: 'Modal',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+  {
+    no: 4,
+    kode: 'XX.XX.XX',
+    nama: 'Persediaan',
+    createdBy: 'Username',
+    createdAt: 'HH:MM - DD/MM/YYYY'
+  },
+]
+
+
 export interface QRCode {
   no: number;
   kodeBarangMaterial: string;
